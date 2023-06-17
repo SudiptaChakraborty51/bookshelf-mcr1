@@ -3,7 +3,7 @@ import { BookContext } from "../../contexts/bookContext";
 import "./bookCard.css";
 
 const BookCard = ({ book }) => {
-  const { id, title, author, image } = book;
+  const { id, title, author, image, category } = book;
 
   const { changeCategoryHandler } = useContext(BookContext);
 
@@ -12,7 +12,7 @@ const BookCard = ({ book }) => {
       <img src={image} alt="book-pic" />
       <p>{title}</p>
       <p>{author}</p>
-      <select onChange={(e) => changeCategoryHandler(id, e.target.value)}>
+      <select onChange={(e) => changeCategoryHandler(id, e.target.value)} value={category}>
         <option disabled>Move to...</option>
         <option value="Currently Reading">Currently Reading</option>
         <option value="Want To Read">Want To Read</option>

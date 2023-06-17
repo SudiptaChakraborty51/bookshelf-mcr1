@@ -16,18 +16,22 @@ const Search = () => {
     <div className="search-main">
       <h2>Search your favourite books by title</h2>
       <div>
-        <i class="fa-solid fa-arrow-left" onClick={() => navigate("/")}></i>
+        <i class="fa-solid fa-arrow-left" onClick={() =>navigate("/")}></i>
         <input
           placeholder="search a book"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
       </div>
-      <ul className="books-container">
+      {
+        searchedBooks?.length > 0 ? 
+        <ul className="books-container">
         {searchedBooks.map((book) => (
           <BookCard key={book.id} book={book} />
         ))}
       </ul>
+      : <p>No book found!</p>
+      }
     </div>
   );
 };

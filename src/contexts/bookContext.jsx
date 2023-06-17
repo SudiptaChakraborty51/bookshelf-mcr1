@@ -9,19 +9,20 @@ const BookProvider = ({ children }) => {
   const changeCategoryHandler = (bookId, selectedCategory) => {
     let updatedBooks = [...books];
     if (selectedCategory.toLowerCase() === "none") {
-      updatedBooks= books.filter((book) => book.id !== bookId);
+      updatedBooks = books.filter((book) => book.id !== bookId);
     } else {
-      updatedBooks =
-        books.map((book) => {
-          return book.id === bookId
-            ? { ...book, category: selectedCategory }
-            : book;
-        })
+      updatedBooks = books.map((book) => {
+        return book.id === bookId
+          ? { ...book, category: selectedCategory }
+          : book;
+      });
     }
     setBooks(updatedBooks);
   };
   return (
-    <BookContext.Provider value={{ books, changeCategoryHandler }}>{children}</BookContext.Provider>
+    <BookContext.Provider value={{ books, changeCategoryHandler }}>
+      {children}
+    </BookContext.Provider>
   );
 };
 

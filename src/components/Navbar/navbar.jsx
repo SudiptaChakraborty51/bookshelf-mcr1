@@ -1,16 +1,23 @@
-import React from 'react';
+import React from "react";
 import "./navbar.css";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  return (
-    <div>
-      <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/search">Search</NavLink>
-      </nav>
-    </div>
-  )
-}
+  const getActiveStyle = ({ isActive }) => ({
+    color: isActive && "yellow",
+    textDecoration: isActive && "underline",
+  });
 
-export default Navbar
+  return (
+    <nav>
+      <NavLink to="/" className="navlink" style={getActiveStyle}>
+        Home
+      </NavLink>
+      <NavLink to="/search" className="navlink" style={getActiveStyle}>
+        Search
+      </NavLink>
+    </nav>
+  );
+};
+
+export default Navbar;

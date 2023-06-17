@@ -16,32 +16,38 @@ const BookShelf = () => {
     (book) => book.category.toLowerCase() === "want to read"
   );
   return (
-    <div>
+    <div className="bookshelf-main">
       <h1>Currently Reading</h1>
       <hr />
-      {currentlyReadingBookList?.length === 0 ? (
-        <h2>No books present in Currently Reading shelf.</h2>
-      ) : (
-        currentlyReadingBookList?.map((book) => (
-          <BookCard key={book.id} book={book} />
-        ))
-      )}
+      <ul>
+        {currentlyReadingBookList?.length === 0 ? (
+          <h2>No books present in Currently Reading shelf.</h2>
+        ) : (
+          currentlyReadingBookList?.map((book) => (
+            <BookCard key={book.id} book={book} />
+          ))
+        )}
+      </ul>
       <h1>Want To Read</h1>
       <hr />
-      {wantToReadBookList?.length === 0 ? (
-        <h2>No books present in Want To Read shelf.</h2>
-      ) : (
-        wantToReadBookList?.map((book) => (
-          <BookCard key={book.id} book={book} />
-        ))
-      )}
+      <ul>
+        {wantToReadBookList?.length === 0 ? (
+          <h2>No books present in Want To Read shelf.</h2>
+        ) : (
+          wantToReadBookList?.map((book) => (
+            <BookCard key={book.id} book={book} />
+          ))
+        )}
+      </ul>
       <h1>Read</h1>
       <hr />
-      {readBookList?.length === 0 ? (
-        <h2>No books present in Read shelf.</h2>
-      ) : (
-        readBookList?.map((book) => <BookCard key={book.id} book={book} />)
-      )}
+      <ul>
+        {readBookList?.length === 0 ? (
+          <h2>No books present in Read shelf.</h2>
+        ) : (
+          readBookList?.map((book) => <BookCard key={book.id} book={book} />)
+        )}
+      </ul>
     </div>
   );
 };

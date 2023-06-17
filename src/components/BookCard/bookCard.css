@@ -1,0 +1,31 @@
+li {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 200px;
+  height: 420px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+li p {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+select {
+    padding: 10px;
+    background-color: #5fad5c;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}

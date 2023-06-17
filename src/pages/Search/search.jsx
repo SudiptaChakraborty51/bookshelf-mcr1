@@ -13,21 +13,21 @@ const Search = () => {
     book.title.toLowerCase().includes(searchInput.trim().toLowerCase())
   );
   return (
-    <div>
+    <div className="search-main">
       <h2>Search your favourite books by title</h2>
       <div>
-        <i class="fa-solid fa-arrow-left" onClick={() =>navigate("/")}></i>
+        <i class="fa-solid fa-arrow-left" onClick={() => navigate("/")}></i>
         <input
           placeholder="search a book"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
       </div>
-      <div>
+      <ul className="books-container">
         {searchedBooks.map((book) => (
           <BookCard key={book.id} book={book} />
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

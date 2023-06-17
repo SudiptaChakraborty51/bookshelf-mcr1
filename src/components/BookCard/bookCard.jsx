@@ -13,7 +13,7 @@ const BookCard = ({ book }) => {
       <p>{title}</p>
       <p>{author}</p>
       <select onChange={(e) => changeCategoryHandler(id, e.target.value)}>
-        <option>Move to...</option>
+        <option disabled>Move to...</option>
         <option value="Currently Reading">Currently Reading</option>
         <option value="Want To Read">Want To Read</option>
         <option value="Read">Read</option>
